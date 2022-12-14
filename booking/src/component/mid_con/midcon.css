@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.etssj{
+    position: relative;
+     display: block;
+}
+
+.midcon{
+    width: 100%;
+     
+}
+
+
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+
+.midcon_img{
+    height: 100%;
+    /* object-fit: cover; */
+    width: 100%;
+    position:absolute;
+}
+
+.midcon_img  img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.midcon_head {
+    top: 20;
+    max-width: 1024px;
+    min-height: 375px;
+    display: flex;
+    margin:0 auto;
+    padding:48px 5px calc(48px + 30px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.midcon_text{
+   max-width: 660px;
+}
+
+.mid_title{
+    font-size: 3rem;    
+    color: #fff;
+}
+
+
+.mid_quate{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1.25em;
+}
+
+
+.mid_btn{
+    text-decoration: none;
+}
+
+.mid_btn button{
+color: #fff;
+text-decoration: none;
+padding: 12px 8px;
+font-size: 1.2rem;
+border: none;
+background-color: #0071c2;
+outline: none;
+}
+
+.mid_btn button:hover{
+    background-color: #0f4a8a;
+}
+
+@media screen and (max-width : 904px) {
+    .mid_title{
+        font-size: 2.5rem;
+    }
+
+    .mid_btn bottom {
+        padding: 8px 3px;
+        font-size: 1rem;
+    }
+
+    
+}
+
+
+@media screen and (max-width : 504px){
+    .mid_title{
+        font-size: 1.6rem;
+    }
+}
+

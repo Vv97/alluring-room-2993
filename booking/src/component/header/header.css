@@ -1,0 +1,38 @@
+.header {
+    background-color: #003580;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.headercontainer{
+    width: 100%;
+    max-width: 1024px;
+    margin: 0.2rem 0 0.2rem 0;
+}
+
+.headerList {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.headerListItem {
+    display:  flex;
+    align-items:  center;
+    gap: 0.625rem;
+}
+
+.headerListItem.active {
+    border: 1px solid #fff;
+    padding: 0.625rem;
+    border-radius: 1.25rem;
+}
+
+.headerListItem:hover{
+    opacity: 4  ;
+    padding: 0.625rem;
+    border-radius: 1.25rem;
+    border: 1px solid #fff;
+
+}
