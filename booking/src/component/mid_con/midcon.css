@@ -76,10 +76,58 @@ font-size: 1.2rem;
 border: none;
 background-color: #0071c2;
 outline: none;
+cursor: pointer;
 }
 
 .mid_btn button:hover{
     background-color: #0f4a8a;
+}
+
+
+.headerserch{
+    border: 3px solid #febb02;
+    height: 30px;
+    position: absolute;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0px;
+    width: 100%;
+    max-width: 1024px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%,-25px);
+}
+
+
+.headerBtn{
+    padding: 0.625em 2em;
+    border: none;
+    background-color: #0071c2;
+}
+
+.headericon{
+    color: #bdbdbd;
+}
+
+
+.headerserachiteam{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.headerserachiteam input{
+    border: none;
+    outline: none;
+}
+
+.headerserachiteam span{
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 @media screen and (max-width : 904px) {
