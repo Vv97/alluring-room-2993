@@ -1,5 +1,8 @@
 import "./midcon.css";
 import { Link } from "react-router-dom";
+import { FaBed } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
+import { BsFillPersonFill } from "react-icons/bs";
 
 function Midcon() {
   return (
@@ -18,6 +21,28 @@ function Midcon() {
           <Link className="mid_btn">
             <button>Explore holiday homes</button>
           </Link>
+        </div>
+      </div>
+
+      <div className="headerserch">
+        <div className="headerserachiteam">
+          <FaBed className="headericon" />
+          <input
+            type="text"
+            placeholder="where are you going?"
+            className="headersearchinput"
+          />
+        </div>
+        <div className="headerserachiteam">
+          <SlCalender className="headericon" />
+          <span className="headerSearchText">date to date</span>
+        </div>
+        <div className="headerserachiteam">
+          <BsFillPersonFill className="headericon" />
+          <span className="headerSearchText">2 adults 2 children 1 room</span>
+        </div>
+        <div className="headerSearchtext">
+          <button className="headerBtn">Search</button>
         </div>
       </div>
     </div>
