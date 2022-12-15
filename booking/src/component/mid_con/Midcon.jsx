@@ -1,10 +1,39 @@
-import "./midcon.css";
+import "./midcon.css"; // midcon css main file
 import { Link } from "react-router-dom";
 import { FaBed } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import { BsFillPersonFill } from "react-icons/bs";
+import { DateRange } from "react-date-range";
+import { useState } from "react";
+import "react-date-range/dist/styles.css"; // calender css main file
+import "react-date-range/dist/theme/default.css"; // calender theme css file
+import { format } from "date-fns";
 
-function Midcon() {
+function Midcon({ type }) {
+  const [opendate, setopendate] = useState(false);
+  const [openoption, setopenoption] = useState(false);
+  const [age, setage] = useState({
+    adults: 3,
+    children: 2,
+    room: 1,
+  });
+  const [date, setdate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+
+  const handleoption = (name, action) => {
+    setage((prev) => {
+      return {
+        ...age,
+        [name]: action === "1" ? age[name] + 1 : age[name] - 1,
+      };
+    });
+  };
+
   return (
     <div className="midcon etssj">
       <div className="midcon_img">
@@ -35,11 +64,98 @@ function Midcon() {
         </div>
         <div className="headerserachiteam">
           <SlCalender className="headericon" />
-          <span className="headerSearchText">date to date</span>
+          <span
+            onClick={() => {
+              setopendate(!opendate);
+              setopenoption(false);
+            }}
+            className="headerSearchText"
+          >{`${format(date[0].startDate, "MM/dd/yyyy")} to  ${format(
+            date[0].endDate,
+            "MM/dd/yyyy"
+          )}`}</span>
+          {opendate && (
+            <DateRange
+              editableDateInputs={true}
+              onChange={(item) => setdate([item.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={date}
+              className="date"
+            />
+          )}
         </div>
         <div className="headerserachiteam">
           <BsFillPersonFill className="headericon" />
-          <span className="headerSearchText">2 adults 2 children 1 room</span>
+          <span
+            onClick={() => {
+              setopenoption(!openoption);
+              setopendate(false);
+            }}
+            className="headerSearchText"
+          >{` ${age.adults} adults  ${age.children} children  ${age.room} room`}</span>
+          {openoption && (
+            <div className="ageselecter">
+              <div className="ageselecteroption">
+                <span className="optiontext">Adults</span>
+                <div className="agetextcon">
+                  <button
+                    disabled={age.adults == 1}
+                    onClick={() => handleoption("adults", "0")}
+                    className="ageselecterbtn"
+                  >
+                    -
+                  </button>
+                  <span className="optionagecounter">{age.adults}</span>
+                  <button
+                    onClick={() => handleoption("adults", "1")}
+                    className="ageselecterbtn"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div className="ageselecteroption">
+                <span className="optiontext">children</span>
+                <div className="agetextcon">
+                  <button
+                    disabled={age.children == 0}
+                    onClick={() => handleoption("children", "0")}
+                    className="ageselecterbtn"
+                  >
+                    -
+                  </button>
+                  <span className="optionagecounter">{age.children}</span>
+                  <button
+                    onClick={() => handleoption("children", "1")}
+                    className="ageselecterbtn"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div className="ageselecteroption">
+                <span className="optiontext">Room</span>
+                <div className="agetextcon">
+                  <button
+                    disabled={age.room == 1}
+                    onClick={() => handleoption("room", "0")}
+                    className="ageselecterbtn"
+                  >
+                    -
+                  </button>
+                  <span className="optionagecounter">{age.room}</span>
+                  <button
+                    onClick={() => handleoption("room", "1")}
+                    className="ageselecterbtn"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <div className="headerSearchtext">
           <button className="headerBtn">Search</button>
