@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+.explore{
+    width: 100%;
+    max-width: 1024px;
+}
+
+
+.explorecard{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+
+
+.explorecard > div {
+    width: 23%;
+}
+
+.explorecard div > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.eploretitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: #262626;
+}
+
+.eploretitle1{
+    color: #6b6b6b;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.exploreiteamtitke{
+    font-size: 1.1rem;
+    color: #262626;
+    font-weight: 600;
+    margin: 10px 0 2px 0;
+}
+
+.exploreprop{
+font-size: 0.8rem;
+color: #6b6b6b;
+}
+

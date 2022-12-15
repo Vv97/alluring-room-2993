@@ -86,7 +86,7 @@ cursor: pointer;
 
 .headerserch{
     border: 3px solid #febb02;
-    height: 30px;
+    height: 60px;
     position: absolute;
     background-color: #fff;
     display: flex;
@@ -119,6 +119,8 @@ cursor: pointer;
 }
 
 
+
+
 .headerserachiteam input{
     border: none;
     outline: none;
@@ -128,6 +130,49 @@ cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+}
+
+
+.date{
+    position: absolute;
+    top: 65px;
+    transform: translatex(-10%);
+    z-index: 2;
+}
+
+
+.ageselecter {
+    position: absolute;
+   top: 65px;
+   background-color: white;
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   z-index: 2;
+}
+
+.ageselecteroption {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.ageselecterbtn{
+   width: 30px;
+   height: 30px;
+   background: #fff;
+  border: 1px solid #0071c2;
+  cursor: pointer;
+}
+
+.agetextcon{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ageselecterbtn:disabled{
+    cursor:  not-allowed;
 }
 
 @media screen and (max-width : 904px) {
