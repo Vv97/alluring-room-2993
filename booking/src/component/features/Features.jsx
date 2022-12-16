@@ -16,11 +16,11 @@ const Features = () => {
             />
           </div>
           <div className="featuretitle">
-            <p className="featutetitile">Save 15% with Late Escape Deals</p>
-            <p className="featutetitile">
+            <p className="featutename">Save 15% with Late Escape Deals</p>
+            <p className="featutequate">
               Tick one more destination off your wishlist
             </p>
-            <button>explore deals</button>
+            <button className="featurebtn">explore deals</button>
           </div>
         </div>
 

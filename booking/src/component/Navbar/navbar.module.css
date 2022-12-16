@@ -33,8 +33,8 @@
 
 .navright ul img {
     border-radius: 50%;
-    max-width: 50%;
-    margin-left: 1.25em;
+    max-width: 40%;
+    margin-left: 1.5em;
 }
 
 .nav_list {
@@ -51,4 +51,12 @@
     font-size:  1rem;
     font-weight: 500;
 } 
+
+.hidden{
+    display: none;
+}
+
+.block {
+    display: block;
+}
 

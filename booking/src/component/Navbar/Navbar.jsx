@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import ss from "./navbar.module.css";
+import { AuthContext } from "../../context/Authcontext";
+import { useContext } from "react";
+import { is } from "date-fns/locale";
+import Dropdown from "../dropdown/Dropdown";
 
-function Navbar() {
+function Navbar({ type }) {
+  const { isAuth } = useContext(AuthContext);
+  console.log(isAuth);
+
   return (
     <div className={ss.navbar}>
       <div className={ss.navcontaier}>
@@ -23,16 +30,22 @@ function Navbar() {
                 alt=""
               />{" "}
             </li>
-            <li>
-              <Link>
-                <button className={ss.nav_list}>Register</button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/">
-                <button className={ss.nav_list}>signup</button>
-              </Link>
-            </li>
+            {isAuth ? (
+              <li>{<Dropdown />}</li>
+            ) : (
+              <>
+                <li className={type === "List" ? ss.hidden : ss.block}>
+                  <Link to="/registered">
+                    <button className={ss.nav_list}>Register</button>
+                  </Link>
+                </li>
+                <li className={type === "List" ? ss.hidden : ss.block}>
+                  <Link to="/signin">
+                    <button className={ss.nav_list}>Sign in</button>
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

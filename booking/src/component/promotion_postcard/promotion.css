@@ -29,6 +29,7 @@
     background-repeat: no-repeat;
     object-fit: cover;
     background-size: cover;
+    filter: brightness(70%);
     border-radius: 3px 3px 0px 0px;
 }
 
@@ -40,6 +41,7 @@
  font-size: 2rem;
  font-weight: bold;
  left: 15px;
+ text-shadow: 0 2px 5px #000;
 }
 
 .pro_list1{

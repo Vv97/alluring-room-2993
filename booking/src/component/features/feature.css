@@ -22,6 +22,31 @@
    
 }
 
+.featuretitle{
+    padding: 20px;
+}
+
+
+
+.featurebtn{
+    margin-top: 12px;
+    padding: 10px 12px;
+   border: none;  
+    font-size: 1rem;
+   background-color: #0071c2 ;
+   color: #fff;
+}
+
+.featutename{
+    font-weight: 500;
+}
+
+.featutequate{
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
 
 
 .featureimg {
@@ -43,6 +68,8 @@
     font-size: 1.1rem;  
     max-width: 320px;
 }
+
+
 
 .featutetitile{
     margin-bottom: 10px;
