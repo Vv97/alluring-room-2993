@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.formwrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1024px;  
+    align-items: center;
+    margin: 50px auto 0 auto;
+}
+
+.registerdform{
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+     flex-direction: column;
+     margin: auto;
+}
+
+.ll{
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 10px;
+}
+
+
+.registertitle{
+    font-size: 1.5rem;
+}
+
+
+.registerdform label {
+    margin-bottom: 4px;
+    /* color: #606060; */
+}
+
+.registerdform input {
+    margin-bottom: 10px;
+    
+}
+
+
+.registerinput{
+    border: 1px solid #c9c8c8;
+    height: 38px;
+    border-radius: 3px;
+    padding: 8px;
+}
+
+.registerinput:focus{
+    outline: 2px solid #0033ff;
+}
+
+/* .divline{
+    width: 100%;
+    max-width: 300px;
+    height: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ededed;
+} */
+
+
+.inputsub{
+padding: 15px;
+margin-top: 12px;
+border: none;
+background-color: #0033ff;
+color: #fff;
+font-size: 1rem;
+font-weight: bolder;
+border-radius: 5px;
+}
+
+.inputsub:hover{
+    background-color:#034694;
+}
+
+.registergoogle{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #6d6d6d;
+    padding: 10px 15px;
+    height: 48px;
+    width: 100%;
+    max-width: 350px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.registergoogle:hover{
+    background-color: 	#F0F0F0;
+}
+
+
+.googleimg{
+    width: 100%;
+}
+
+.registercheckbox{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}

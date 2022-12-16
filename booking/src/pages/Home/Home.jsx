@@ -7,6 +7,7 @@ import Explore from "../../component/explore/Explore";
 import Promotion from "../../component/promotion_postcard/Promotion";
 import MailList from "../../component/maillist/MailList";
 import Featureproperty from "../../component/featureproperty/Featureproperty";
+import Footer from "../../component/footer/Footer";
 import "./home.css";
 
 function Home() {
@@ -21,6 +22,7 @@ function Home() {
         <Promotion />
         <Featureproperty />
         <MailList />
+        <Footer />
       </div>
     </div>
   );

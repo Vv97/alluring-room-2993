@@ -11,6 +11,11 @@
     margin: 0.2rem 0 0.2rem 0;
 }
 
+.headerListItem a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .headerList {
     display: flex;
     gap: 2.5rem;
@@ -23,16 +28,16 @@
     gap: 0.625rem;
 }
 
-.headerListItem.active {
+.active {
     border: 1px solid #fff;
     padding: 0.625rem;
     border-radius: 1.25rem;
 }
 
-.headerListItem:hover{
+/* .headerListItem:hover{
     opacity: 4  ;
     padding: 0.625rem;
     border-radius: 1.25rem;
     border: 1px solid #fff;
 
-}
+} */
