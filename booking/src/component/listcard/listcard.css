@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+.listWrapper{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listIteam{
+    padding: 18px 5px;
+    display: flex;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: 20px;
+   height: 100%;
+    max-height: 250px;
+}
+
+
+
+.listImage{
+    width: 100%;
+    height: 100%;
+    max-width:28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listImage img{
+    width: 100%;
+}
+
+.listTitle{
+    display: flex;
+    width: 72%;
+    padding: 5px;
+    gap: 5px;
+}
+
+.listdiv1{
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+   
+}
+.listdiv2{
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0px;
+  
+    /* border: 1px solid rebeccapurple; */
+}
+.listdiv1Title{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #0071c2 ;
+    cursor: pointer;
+}
+
+.listdiv1Title:hover{
+    color: #262626;
+}
+
+.listLocation{
+    display: flex;
+    gap:0px 25px;
+
+}
+
+.listLocation > span{
+    text-decoration: underline;
+    color: #0071c2;
+    font-size: smaller;
+    padding: 5px 0px;
+}
+
+
+.TravelSustainable{
+    display: flex;
+    height: 20px;
+    gap: 5px;
+    font-size: smaller;
+
+}
+
+
+.TravelSustainable > span > svg{
+    width: 100%;
+    height: 100%;
+    color: #262626;
+}
+
+.listhotelservise{
+    font-size: 0.7rem;
+    color: #262626;
+    line-height: 1.3;
+   text-align:  justify;
+}
+
+
+
+.listRating{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.listreview{
+    display: flex;
+    flex-direction: column;
+}
+
+.listreview span:nth-child(2){
+    font-size: 0.7rem;
+    color: #6b6b6b;
+    text-align: right;
+}
+
+.lRating{
+    height: 38px;
+    padding: 3px 2px;
+    background-color: #003580;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.listrat{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #262626;
+}
+
+.listdiv2 > button {
+    height: 40px;
+    border: none;
+    background-color: #0071c2;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.listdiv2 > button:hover {
+    background-color:  #003580;
+}
+
+
+

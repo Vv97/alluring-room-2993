@@ -5,8 +5,11 @@ import { MdLuggage } from "react-icons/md";
 import { IoWalletSharp } from "react-icons/io5";
 import { AiFillHeart } from "react-icons/ai";
 import { AiOutlineImport } from "react-icons/ai";
+import { AuthContext } from "../../context/Authcontext";
+import { useContext } from "react";
 
 const Dropdown = () => {
+  const { setIsAuth, isAuth } = useContext(AuthContext);
   return (
     <div className="dropdown">
       <div className="collapse">
@@ -39,7 +42,7 @@ const Dropdown = () => {
             </span>
             Saved
           </li>
-          <li>
+          <li onClick={() => setIsAuth(!isAuth)}>
             <span className="drop_gap">
               <AiOutlineImport className="drop_icon" />
             </span>

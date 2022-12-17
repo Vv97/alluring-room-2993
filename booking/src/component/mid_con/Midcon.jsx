@@ -8,10 +8,14 @@ import { useState } from "react";
 import "react-date-range/dist/styles.css"; // calender css main file
 import "react-date-range/dist/theme/default.css"; // calender theme css file
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 function Midcon({ type }) {
+  const navigate = useNavigate();
+  const [Destination, setDestination] = useState("");
   const [opendate, setopendate] = useState(false);
   const [openoption, setopenoption] = useState(false);
+
   const [age, setage] = useState({
     adults: 3,
     children: 2,
@@ -32,6 +36,14 @@ function Midcon({ type }) {
         [name]: action === "1" ? age[name] + 1 : age[name] - 1,
       };
     });
+  };
+
+  const handlesearch = () => {
+    navigate("/list", { state: { Destination, date, age } });
+  };
+
+  const onchan = (e) => {
+    setDestination(e.target.value);
   };
 
   return (
@@ -60,6 +72,8 @@ function Midcon({ type }) {
             type="text"
             placeholder="where are you going?"
             className="headersearchinput"
+            value={Destination}
+            onChange={onchan}
           />
         </div>
         <div className="headerserachiteam">
@@ -81,6 +95,7 @@ function Midcon({ type }) {
               moveRangeOnFirstSelection={false}
               ranges={date}
               className="date"
+              minDate={new Date()}
             />
           )}
         </div>
@@ -158,7 +173,9 @@ function Midcon({ type }) {
           )}
         </div>
         <div className="headerSearchtext">
-          <button className="headerBtn">Search</button>
+          <button className="headerBtn" onClick={handlesearch}>
+            Search
+          </button>
         </div>
       </div>
     </div>

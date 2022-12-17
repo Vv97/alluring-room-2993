@@ -7,7 +7,6 @@ import Dropdown from "../dropdown/Dropdown";
 
 function Navbar({ type }) {
   const { isAuth } = useContext(AuthContext);
-  console.log(isAuth);
 
   return (
     <div className={ss.navbar}>
