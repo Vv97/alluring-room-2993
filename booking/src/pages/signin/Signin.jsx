@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../context/Authcontext";
 import { useContext } from "react";
+import { da } from "date-fns/locale";
 
 const Signin = () => {
   const [data, setdata] = useState([]);
@@ -16,27 +17,25 @@ const Signin = () => {
 
   const { setIsAuth, isAuth } = useContext(AuthContext);
 
-  console.log(isAuth);
-
   useEffect(() => {
     axios
       .get("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan")
       .then((res) => setdata(res.data.items));
-  }, []);
+  }, [data.length]);
 
   function onsub(e) {
     e.preventDefault();
+    console.log(data);
     data.map((user) => {
       if (
         user.email === userdata.email &&
         user.password === userdata.password
       ) {
         setvalue(true);
+        setIsAuth(!isAuth);
         return;
       }
     });
-
-    setIsAuth(!isAuth);
   }
 
   if (value) {

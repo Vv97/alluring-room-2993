@@ -9,16 +9,21 @@
     width: 100%;
     max-width: 1024px;
     margin: 0.2rem 0 0.2rem 0;
+    padding-bottom: 8px;
 }
 
 .headerListItem a {
     text-decoration: none;
     color: #fff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
 .headerList {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.7rem;
     align-items: center;
 }
 
@@ -28,16 +33,18 @@
     gap: 0.625rem;
 }
 
-.active {
-    border: 1px solid #fff;
+.headerListItem > a {
     padding: 0.625rem;
+}
+
+.headerList .active {
+    border: 1px solid #fff;
+    background-color:#1a4a8d;
     border-radius: 1.25rem;
 }
 
-/* .headerListItem:hover{
+.headerListItem:hover{
     opacity: 4  ;
-    padding: 0.625rem;
     border-radius: 1.25rem;
-    border: 1px solid #fff;
-
-} */
+    background-color:#1a4a8d;
+}

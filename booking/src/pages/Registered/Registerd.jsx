@@ -32,7 +32,7 @@ function Register() {
     //   email: "",
     //   password: "",
     // });
-    // setAuth(!Auth);
+    setAuth(!Auth);
   }
 
   // useEffect(() => {
@@ -40,7 +40,7 @@ function Register() {
   // }, [userdata]);
 
   if (Auth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/signin" />;
   }
 
   return (

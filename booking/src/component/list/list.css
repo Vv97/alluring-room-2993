@@ -1,0 +1,106 @@
+.listcontainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.listwrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.listsearch{
+    flex: 1;
+    width: 100%;
+    background-color: #febb02;
+    padding: 15px;
+    border-radius: 2px;
+    position: sticky;
+    max-width: 270px;
+    height: 100%;
+}
+
+.listresult {
+    flex: 2;
+}
+
+.isserchiteam {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.isserchiteam > label{
+    font-size: 0.9rem;
+}
+
+.listbox {
+    background-color: #fff;
+     height: 40px;
+     width: 100%;
+    display: flex;
+    border: 1px solid rebeccapurple;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    position: relative;
+    padding: 0px 8px;
+   
+}
+
+.listbox > input {
+    height: 30px;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.listdate {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 100%;
+    z-index: 1  ;
+    background-color: #fff;
+}
+
+.listcheckbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: small;
+    margin-bottom: 5px;
+}
+
+.listcheckbox > input{
+    cursor: pointer;
+}
+
+.listwrappercheckbox{
+    margin-top: 10px;
+}
+
+.listSubmit{
+    width: 100%;
+    display: block;
+    max-width: 60%;
+    padding: 15px 20px;
+    margin: 28px auto 0px auto;
+    border: none;
+    font-weight: bold;
+    background-color:#0071c2 ;
+    color: #fff;
+    cursor: pointer;
+}
+
+.listSubmit:hover{
+    background-color: #003580;
+}
+
+.selectcheck{
+    cursor: pointer;
+}
