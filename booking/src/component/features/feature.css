@@ -37,6 +37,13 @@
    color: #fff;
 }
 
+.featurebtn:hover{
+    cursor: pointer;
+    background-color: #0071c2;
+}
+
+
+
 .featutename{
     font-weight: 500;
 }
@@ -105,13 +112,18 @@
     font-size: 1rem;
 }
 
-.featursetitle button{
+/* .featursetitle > button{
     margin-top: 20px;
     padding: 10px 12px;
    border: none;  
     font-size: 1rem;
    background-color: #0071c2 ;
    color: #fff;
+   cursor: pointer;
+} */
+
+.featursetitle > button:hover{
+     background-color:  #0f4a8a;
 }
 
 

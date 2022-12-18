@@ -115,3 +115,15 @@ border-radius: 5px;
     height: 15px;
     cursor: pointer;
 }
+
+
+
+
+.regcondition > input{ 
+    margin-right: 8px;
+}
+
+.rgconcheck{
+    font-size: 0.8rem;
+    color: #0033ff;
+}

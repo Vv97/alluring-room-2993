@@ -15,6 +15,8 @@
 
 .collapse:hover .collaps_text{
    opacity: 1;
+   pointer-events: all;
+   cursor: pointer;
 }
 
 
@@ -26,13 +28,14 @@
    align-items: center;
    justify-content: center;
    z-index: 1;
-   top: 50px;
+   top: 43px;
    left: -130px;
    background-color: #fff;
    width: 220px;
    color: black;
    gap: 10px;
    padding: 10px 0px;
+   pointer-events: none;
 }
 
 .collaps_text li {
