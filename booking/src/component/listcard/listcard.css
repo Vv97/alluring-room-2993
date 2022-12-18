@@ -16,7 +16,7 @@
 }
 
 .listIteam{
-    padding: 18px 5px;
+    padding: 15px 5px;
     display: flex;
     gap: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -65,11 +65,15 @@
 .listdiv1Title{
     font-weight: bold;
     font-size: 1.3rem;
-    color: #0071c2 ;
+
     cursor: pointer;
 }
 
-.listdiv1Title:hover{
+.listcardlink{
+    color: #0071c2 ;
+    text-decoration: none;
+}
+.listcardlink:hover{
     color: #262626;
 }
 

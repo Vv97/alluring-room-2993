@@ -1,8 +1,8 @@
 import "./maillist.css";
 
-const MailList = () => {
+const MailList = ({ type }) => {
   return (
-    <div className="mail">
+    <div className={type === "List" ? "mail mt0" : "mt50"}>
       <h1 className="mailTitle">Save time, save money!</h1>
       <span className="mailDesc">
         Sign up and we'll send the best deals to you

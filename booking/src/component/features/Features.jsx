@@ -28,7 +28,7 @@ const Features = () => {
           <div className="featursetitle">
             <p>Fly away to your dream holiday</p>
             <p>Get inspired, compare and book flights with more flexibility</p>
-            <button>Search for flights</button>
+            <button className="featurebtn">Search for flights</button>
           </div>
           <div className="featurseimg">
             <img

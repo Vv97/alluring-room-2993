@@ -11,6 +11,7 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import Listcard from "../listcard/Listcard";
 import axios from "axios";
+import { da } from "date-fns/locale";
 const List = () => {
   const location = useLocation();
   const [Destination, setDestination] = useState(location.state.Destination);
@@ -25,7 +26,7 @@ const List = () => {
 
   useEffect(() => {
     axios
-      .get(`https://rose-repulsive-adder.cyclic.app/${Destination}?_limit=10`)
+      .get(`https://red-light-wasp.cyclic.app/${Destination}`)
       .then((res) => setdata(res.data));
   }, []);
 
@@ -105,7 +106,11 @@ const List = () => {
                   image={user.img1}
                   text1={user.text1}
                   city={user.city}
+                  heading1={user.heading1}
                   headig2={user.headig2}
+                  id={user.id}
+                  rating={user.rating}
+                  text2={user.text2}
                 />
               ))}
           </div>

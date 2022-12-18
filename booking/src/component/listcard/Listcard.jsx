@@ -1,6 +1,16 @@
 import "./listcard.css";
+import { Link } from "react-router-dom";
 
-const Listcard = ({ image, text1, city, headig2 }) => {
+const Listcard = ({
+  image,
+  text1,
+  city,
+  headig2,
+  id,
+  rating,
+  text2,
+  heading1,
+}) => {
   return (
     <div className="listCard">
       <div className="listWrapper">
@@ -11,11 +21,14 @@ const Listcard = ({ image, text1, city, headig2 }) => {
 
           <div className="listTitle">
             <div className="listdiv1">
-              <p className="listdiv1Title">{text1}</p>
+              <p className="listdiv1Title">
+                <Link className="listcardlink" to={`/hotel/${id}`}>
+                  {heading1}
+                </Link>
+              </p>
               <div className="listLocation">
                 <span>
-                  {city}
-                  {headig2}
+                  {city},{headig2}
                 </span>
                 <span>Reserve now, pay later</span>
               </div>
@@ -27,11 +40,7 @@ const Listcard = ({ image, text1, city, headig2 }) => {
                 </span>
                 <span>Travel Sustainable property</span>
               </div>
-              <p className="listhotelservise">
-                Located in the Mahipalpur area of New Delhi, Hotel Smart Plaza
-                Delhi Airport is a 10-minute drive from Indira Gandhi
-                International Airport.
-              </p>
+              <p className="listhotelservise">{text2}</p>
             </div>
             <div className="listdiv2">
               <div className="listRating">
@@ -39,7 +48,7 @@ const Listcard = ({ image, text1, city, headig2 }) => {
                   <span className="listrat">Excellent</span>
                   <span>5223 reviews</span>
                 </div>
-                <div className="lRating">4.3/5</div>
+                <div className="lRating">{rating}</div>
               </div>
               <button>Show price</button>
             </div>

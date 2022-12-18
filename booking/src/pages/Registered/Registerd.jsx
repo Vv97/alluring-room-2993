@@ -75,10 +75,13 @@ function Register() {
             value={data.password}
             onChange={onchange}
           />
-          <label htmlFor="">
-            <input type="checkbox" className="registercheckbox" />I agree to
-            Travlo <span>Terms of Service</span> and{" "}
-            <span> Privacy Policy</span>
+          <label htmlFor="" className="regcondition ">
+            <input type="checkbox" className="registercheckbox" />
+            <span>
+              I agree to Travlo{" "}
+              <span className="rgconcheck">Terms of Service</span> and{" "}
+              <span className="rgconcheck"> Privacy Policy</span>
+            </span>
           </label>
           <input type="submit" className="inputsub" value="Registered" />
         </form>
