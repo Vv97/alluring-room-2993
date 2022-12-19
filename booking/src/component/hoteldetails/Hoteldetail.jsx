@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function Hoteldetail() {
   const lsData1 = JSON.parse(localStorage.getItem("data")) || [];
-  console.log(lsData1);
   function convert(price) {
     let str = "";
     price = price.split("");
@@ -245,7 +244,7 @@ export default function Hoteldetail() {
                 margin: "auto",
               }}
             >
-              <p style={{ fontSize: "x-small", color: "#3498db" }}>
+              <p style={{ fontSize: "x-small", color: "#003580" }}>
                 Apply coupon (If Any)
               </p>
               <span style={{ color: "red" }}>*</span>
@@ -267,7 +266,7 @@ export default function Hoteldetail() {
                 placeholder="Enter coupon code"
                 style={{
                   height: "30px",
-                  border: "3px solid #3498db",
+                  border: "3px solid #003580",
                   borderRadius: "10px",
                   padding: "0 3%",
                   width: "60%",
@@ -278,7 +277,7 @@ export default function Hoteldetail() {
                   height: "35px",
                   width: "30%",
                   border: "none",
-                  backgroundColor: "#3489db",
+                  backgroundColor: "#003580",
                   borderRadius: "10px",
                   color: "rgb(255,255,255)",
                   cursor: "pointer",

@@ -70,7 +70,7 @@ export default function Checking() {
                   fontWeight: "600",
                 }}
               >
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon icon={faCheck} style={{ fontWeight: "900" }} />
                 <p>Free WiFi</p>
               </div>
             </div>
