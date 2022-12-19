@@ -28,7 +28,7 @@ function Header() {
             </NavLink>
           </div>
           <div className="headerListItem">
-            <NavLink to="/hotel">
+            <NavLink to="*">
               <BiCar /> <span>Car rentals</span>
             </NavLink>
           </div>
