@@ -3,8 +3,20 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { FaGreaterThan } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const Pimportant = () => {
+  const [payment, setpayment] = useState(false);
+
+  const handlepayment = () => {
+    setpayment(!payment);
+  };
+
+  if (payment) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className="important">
       <p className="importantTitle">Important information</p>
@@ -68,7 +80,7 @@ const Pimportant = () => {
           </span>
         </div>
 
-        <button className="impbtn">
+        <button className="impbtn" onClick={handlepayment}>
           <span className="btnflrc">
             <span> Complete Booking</span>
             <span className="fagreater">
