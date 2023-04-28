@@ -4,14 +4,15 @@ import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
-function Register() {
-  const [data, setdata] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+const authintialstate = {
+  name: "",
+  email: "",
+  password: "",
+};
 
-  const [userdata, setuserdata] = useState([]);
+function Register() {
+  const [data, setdata] = useState(authintialstate);
+
   const [Auth, setAuth] = useState(false);
 
   function onchange(e) {
@@ -20,24 +21,24 @@ function Register() {
 
   function onsub(e) {
     e.preventDefault();
-    axios.post("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan", {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    });
 
-    // setuserdata([...userdata, data]);
-    // setdata({
-    //   name: "",
-    //   email: "",
-    //   password: "",
-    // });
-    setAuth(!Auth);
+    if (!data.name && !data.email && !data.password) {
+      alert("please fill all the details!");
+      return;
+    }
+
+    axios
+      .post("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan", {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      })
+      .then((_) => {
+        alert("register successful!");
+        setdata(authintialstate);
+        setAuth(!Auth);
+      });
   }
-
-  // useEffect(() => {
-  //   localStorage.setItem("data", JSON.stringify(userdata));
-  // }, [userdata]);
 
   if (Auth) {
     return <Navigate to="/signin" />;
@@ -62,7 +63,7 @@ function Register() {
           <label htmlFor="">Email</label>
           <input
             className="registerinput"
-            type="text"
+            type="email"
             name="email"
             value={data.email}
             onChange={onchange}
@@ -70,7 +71,7 @@ function Register() {
           <label htmlFor="">Password</label>
           <input
             className="registerinput"
-            type="text"
+            type="password"
             name="password"
             value={data.password}
             onChange={onchange}
