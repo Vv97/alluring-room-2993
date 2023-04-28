@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import ss from "./navbar.module.css";
 import { AuthContext } from "../../context/Authcontext";
 import { useContext } from "react";
-import { is } from "date-fns/locale";
 import Dropdown from "../dropdown/Dropdown";
 
 function Navbar({ type }) {

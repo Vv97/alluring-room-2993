@@ -17,13 +17,6 @@ function Hotel() {
   let [id, setid] = useState(val.id);
   let [data, setdata] = useState([]);
   let [nav, setnav] = useState(false);
-  useEffect(() => {
-    axios.get(`https://red-light-wasp.cyclic.app/delhi/${id}`).then((res) => {
-      setdata(res.data);
-      localStorage.setItem("data", JSON.stringify(res.data));
-    });
-  }, []);
-
   let arr = [data.img2, data.img3, data.img4, data.img5, data.img6, data.img7];
 
   const handleopen = (i) => {
@@ -45,16 +38,39 @@ function Hotel() {
     setnav(!nav);
   };
 
+  useEffect(() => {
+    axios.get(`https://red-light-wasp.cyclic.app/delhi/${id}`).then((res) => {
+      setdata(res.data);
+      localStorage.setItem("data", JSON.stringify(res.data));
+    });
+  }, []);
+
   if (nav) {
     return <Navigate to="/payment" />;
   }
 
   return (
     <div className="Hotel">
+      {open && (
+        <div className="slider">
+          <RiCloseLine className="close" onClick={() => setopen(!open)} />
+          <BsFillArrowLeftCircleFill
+            onClick={() => handlechange(1)}
+            className="arrow"
+          />
+          <div className="slidewrapper">
+            <img src={arr[slideNmber]} alt="" />
+          </div>
+          <BsFillArrowRightCircleFill
+            onClick={() => handlechange(1)}
+            className="arrow"
+          />
+        </div>
+      )}
       <Navbar />
       <Header />
       <div className="hotelcontainer">
-        {open && (
+        {/* {open && (
           <div className="slider">
             <RiCloseLine className="close" onClick={() => setopen(!open)} />
             <BsFillArrowLeftCircleFill
@@ -69,7 +85,7 @@ function Hotel() {
               className="arrow"
             />
           </div>
-        )}
+        )} */}
         <div className="hotelwrapper">
           <button className="Booknow" onClick={handleredirect}>
             Reserve or Book Now!

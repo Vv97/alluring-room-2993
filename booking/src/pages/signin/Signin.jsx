@@ -1,47 +1,44 @@
 import "./sign.css";
 import Navbar from "../../component/Navbar/Navbar";
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../context/Authcontext";
 import { useContext } from "react";
-import { da } from "date-fns/locale";
+
+const signinintialstate = {
+  email: "",
+  password: "",
+};
 
 const Signin = () => {
   const [data, setdata] = useState([]);
-  const [value, setvalue] = useState(false);
-  const [userdata, setuserdata] = useState({
-    email: "",
-    password: "",
-  });
+  const [userdata, setuserdata] = useState(signinintialstate);
+  const navigate = useNavigate();
 
   const { setIsAuth, isAuth } = useContext(AuthContext);
+
+  function onsub(e) {
+    e.preventDefault();
+    let user = data.filter(
+      (user) =>
+        user.email === userdata.email && user.password === userdata.password
+    );
+
+    if (user.length > 0) {
+      setIsAuth(!isAuth);
+      localStorage.setItem("Auth", JSON.stringify(!isAuth));
+      localStorage.setItem("email", JSON.stringify(user[0].email));
+      alert("Sign in successful");
+      navigate("/");
+    }
+  }
 
   useEffect(() => {
     axios
       .get("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan")
       .then((res) => setdata(res.data.items));
   }, [data.length]);
-
-  function onsub(e) {
-    e.preventDefault();
-    console.log(data);
-    data.map((user) => {
-      if (
-        user.email === userdata.email &&
-        user.password === userdata.password
-      ) {
-        setvalue(true);
-        setIsAuth(!isAuth);
-        localStorage.setItem("email", JSON.stringify(user.email));
-        return;
-      }
-    });
-  }
-
-  if (value) {
-    return <Navigate to="/" />;
-  }
 
   function onchange(e) {
     setuserdata({ ...userdata, [e.target.name]: e.target.value });
@@ -58,7 +55,7 @@ const Signin = () => {
           <label htmlFor="">Email</label>
           <input
             className="registerinput"
-            type="text"
+            type="email"
             name="email"
             value={userdata.email}
             onChange={onchange}
@@ -66,7 +63,7 @@ const Signin = () => {
           <label htmlFor="">Password</label>
           <input
             className="registerinput"
-            type="text"
+            type="password"
             name="password"
             value={data.password}
             onChange={onchange}

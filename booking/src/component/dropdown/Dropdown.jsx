@@ -10,6 +10,13 @@ import { useContext } from "react";
 
 const Dropdown = () => {
   const { setIsAuth, isAuth } = useContext(AuthContext);
+
+  const signout = () => {
+    setIsAuth(false);
+    localStorage.setItem("Auth", false);
+    localStorage.removeItem("email");
+  };
+
   return (
     <div className="dropdown">
       <div className="collapse">
@@ -42,7 +49,7 @@ const Dropdown = () => {
             </span>
             Saved
           </li>
-          <li onClick={() => setIsAuth(!isAuth)}>
+          <li onClick={signout}>
             <span className="drop_gap">
               <AiOutlineImport className="drop_icon" />
             </span>
