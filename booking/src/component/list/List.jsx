@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../Navbar/Navbar";
 import Header from "../header/Header";
 import "./list.css";
@@ -11,26 +11,45 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import Listcard from "../listcard/Listcard";
 import axios from "axios";
-import { da } from "date-fns/locale";
+import { Loader } from "../Loader/Loader";
 const List = () => {
   const location = useLocation();
-  const [Destination, setDestination] = useState(location.state.Destination);
-  const [date, setdate] = useState(location.state.date);
-  const [age, setage] = useState(location.state.age);
+  // creating loader state for handle loader
+  const [loader, setLoader] = useState(false);
+  const [Destination, setDestination] = useState(
+    location.state.Destination || "delhi"
+  );
+
+  const [date, setdate] = useState(location.state.date || "");
+  const [age, setage] = useState(location.state.age || "");
   const [opendate, setopendate] = useState(false);
   const [data, setdata] = useState([]);
+  // time varibale for clearing settimeout
+  const time = useRef();
 
   const onchan = (e) => {
     setDestination(e.target.value);
   };
 
   useEffect(() => {
+    setLoader(true);
     axios
       .get(`https://red-light-wasp.cyclic.app/${Destination}`)
       .then((res) => setdata(res.data));
+
+    time.current = setTimeout(() => {
+      setLoader(false);
+    }, 2000);
+
+    // clearing time out
+    return () => {
+      clearTimeout(time.current);
+    };
   }, []);
 
-  return (
+  return loader ? (
+    <Loader />
+  ) : (
     <div>
       <Navbar />
       <Header />

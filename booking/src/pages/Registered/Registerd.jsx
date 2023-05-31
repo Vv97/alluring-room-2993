@@ -13,6 +13,8 @@ const authintialstate = {
 function Register() {
   const [data, setdata] = useState(authintialstate);
 
+  // creating loader state
+  const [loader, setloader] = useState(false);
   const [Auth, setAuth] = useState(false);
 
   function onchange(e) {
@@ -21,6 +23,7 @@ function Register() {
 
   function onsub(e) {
     e.preventDefault();
+    setloader(true);
 
     if (!data.name && !data.email && !data.password) {
       alert("please fill all the details!");
@@ -34,6 +37,7 @@ function Register() {
         password: data.password,
       })
       .then((_) => {
+        setloader(false);
         alert("register successful!");
         setdata(authintialstate);
         setAuth(!Auth);
@@ -58,6 +62,7 @@ function Register() {
             type="text"
             name="name"
             value={data.name}
+            required
             onChange={onchange}
           />
           <label htmlFor="">Email</label>
@@ -65,6 +70,7 @@ function Register() {
             className="registerinput"
             type="email"
             name="email"
+            required
             value={data.email}
             onChange={onchange}
           />
@@ -73,6 +79,7 @@ function Register() {
             className="registerinput"
             type="password"
             name="password"
+            required
             value={data.password}
             onChange={onchange}
           />
@@ -84,7 +91,12 @@ function Register() {
               <span className="rgconcheck"> Privacy Policy</span>
             </span>
           </label>
-          <input type="submit" className="inputsub" value="Registered" />
+          <input
+            disabled={loader}
+            type="submit"
+            className="inputsub"
+            value={loader ? "...loading" : "Registered"}
+          />
         </form>
         <p>Or</p>
         <button className="registergoogle">

@@ -3,21 +3,26 @@ import Navbar from "../../component/Navbar/Navbar";
 import Header from "../../component/header/Header";
 import { IoLocationSharp } from "react-icons/io5";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { RiCloseLine } from "react-icons/ri";
 import { Navigate } from "react-router-dom";
+import { Loader } from "../../component/Loader/Loader";
 
 function Hotel() {
   const [slideNmber, setslidenumber] = useState(0);
   const [open, setopen] = useState(false);
+  // creating loader state for handle loader
+  const [loader, setLoader] = useState(false);
   let val = useParams();
   let [id, setid] = useState(val.id);
   let [data, setdata] = useState([]);
   let [nav, setnav] = useState(false);
   let arr = [data.img2, data.img3, data.img4, data.img5, data.img6, data.img7];
+  // time varibale for clearing settimeout
+  const time = useRef();
 
   const handleopen = (i) => {
     setslidenumber(i);
@@ -39,17 +44,29 @@ function Hotel() {
   };
 
   useEffect(() => {
+    setLoader(true);
     axios.get(`https://red-light-wasp.cyclic.app/delhi/${id}`).then((res) => {
       setdata(res.data);
       localStorage.setItem("data", JSON.stringify(res.data));
     });
+
+    time.current = setTimeout(() => {
+      setLoader(false);
+    }, 2000);
+
+    // clearing time out
+    return () => {
+      clearTimeout(time.current);
+    };
   }, []);
 
   if (nav) {
     return <Navigate to="/payment" />;
   }
 
-  return (
+  return loader ? (
+    <Loader />
+  ) : (
     <div className="Hotel">
       {open && (
         <div className="slider">
@@ -70,22 +87,6 @@ function Hotel() {
       <Navbar />
       <Header />
       <div className="hotelcontainer">
-        {/* {open && (
-          <div className="slider">
-            <RiCloseLine className="close" onClick={() => setopen(!open)} />
-            <BsFillArrowLeftCircleFill
-              onClick={() => handlechange(1)}
-              className="arrow"
-            />
-            <div className="slidewrapper">
-              <img src={arr[slideNmber]} alt="" />
-            </div>
-            <BsFillArrowRightCircleFill
-              onClick={() => handlechange(1)}
-              className="arrow"
-            />
-          </div>
-        )} */}
         <div className="hotelwrapper">
           <button className="Booknow" onClick={handleredirect}>
             Reserve or Book Now!

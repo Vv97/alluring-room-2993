@@ -1,50 +1,52 @@
 .header {
-    background-color: #003580;
-    color: white;
-    display: flex;
-    justify-content: center;
+  background-color: #003580;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
-.headercontainer{
-    width: 100%;
-    max-width: 1024px;
-    margin: 0.2rem 0 0.2rem 0;
-    padding-bottom: 8px;
+.headercontainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0.2rem 0 0.2rem 0;
+  padding-bottom: 8px;
 }
 
-.headerListItem a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 9px;
+.headerListItem a,
+.headerListItem > span {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
 
 .headerList {
-    display: flex;
-    gap: 1.7rem;
-    align-items: center;
+  display: flex;
+  gap: 1.7rem;
+  align-items: center;
 }
 
 .headerListItem {
-    display:  flex;
-    align-items:  center;
-    gap: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
 }
 
-.headerListItem > a {
-    padding: 0.625rem;
+.headerListItem > a,
+.headerListItem > span {
+  padding: 0.625rem;
 }
 
 .headerList .active {
-    border: 1px solid #fff;
-    background-color:#1a4a8d;
-    border-radius: 1.25rem;
+  border: 1px solid #fff;
+  background-color: #1a4a8d;
+  border-radius: 1.25rem;
 }
 
-.headerListItem:hover{
-    opacity: 4  ;
-    border-radius: 1.25rem;
-    background-color:#1a4a8d;
+.headerListItem:hover {
+  opacity: 4;
+  border-radius: 1.25rem;
+  background-color: #1a4a8d;
 }

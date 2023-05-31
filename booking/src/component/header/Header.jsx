@@ -18,9 +18,10 @@ function Header() {
             </NavLink>
           </div>
           <div className="headerListItem">
-            <NavLink to="/dropdown">
+            <span>
+              {" "}
               <TbPlaneInflight /> <span>Flights</span>
-            </NavLink>
+            </span>
           </div>
           <div className="headerListItem">
             <NavLink to="/list">
@@ -28,14 +29,15 @@ function Header() {
             </NavLink>
           </div>
           <div className="headerListItem">
-            <NavLink to="*">
+            <span>
               <BiCar /> <span>Car rentals</span>
-            </NavLink>
+            </span>
           </div>
           <div className="headerListItem">
-            <NavLink to="*">
+            <span>
+              {" "}
               <MdAttractions /> <span>Attraction</span>
-            </NavLink>
+            </span>
           </div>
         </div>
       </div>

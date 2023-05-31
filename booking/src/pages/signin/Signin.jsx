@@ -15,11 +15,13 @@ const Signin = () => {
   const [data, setdata] = useState([]);
   const [userdata, setuserdata] = useState(signinintialstate);
   const navigate = useNavigate();
+  const [loader, setloader] = useState(false);
 
   const { setIsAuth, isAuth } = useContext(AuthContext);
 
   function onsub(e) {
     e.preventDefault();
+    setloader(true);
     let user = data.filter(
       (user) =>
         user.email === userdata.email && user.password === userdata.password
@@ -30,6 +32,7 @@ const Signin = () => {
       localStorage.setItem("Auth", JSON.stringify(!isAuth));
       localStorage.setItem("email", JSON.stringify(user[0].email));
       alert("Sign in successful");
+      setloader(false);
       navigate("/");
     }
   }
@@ -57,6 +60,7 @@ const Signin = () => {
             className="registerinput"
             type="email"
             name="email"
+            required
             value={userdata.email}
             onChange={onchange}
           />
@@ -65,6 +69,7 @@ const Signin = () => {
             className="registerinput"
             type="password"
             name="password"
+            required
             value={data.password}
             onChange={onchange}
           />
@@ -76,7 +81,12 @@ const Signin = () => {
               <span className="rgconcheck"> Privacy Policy</span>
             </span>
           </label>
-          <input type="submit" className="inputsub" value="Sign in" />
+          <input
+            type="submit"
+            className="inputsub"
+            disabled={loader}
+            value={loader ? "...loading" : "Sign in"}
+          />
           <p style={{ textAlign: "center" }}>Or</p>
           <button className="registergoogle">
             <span>
